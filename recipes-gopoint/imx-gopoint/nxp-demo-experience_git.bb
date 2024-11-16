@@ -7,7 +7,7 @@ NXP_DEMO_SRC ?= "git://github.com/nxp-imx-support/nxp-demo-experience.git;protoc
 NXP_DEMO_BRANCH ?= "lf-6.6.52_2.2.0"
 NXP_DEMO_SRCREV ?= "52e5d30673f75ab5a53f6541f2845894b8fc0b05"
 
-PV = "${NXP_DEMO_BRANCH}+git${SRCREV}"
+PV = "${NXP_DEMO_BRANCH}+git${NXP_DEMO_SRCREV}"
 
 SRC_URI = "${NXP_DEMO_SRC};branch=${NXP_DEMO_BRANCH};name=nxp-demo-experience"
 SRCREV = "${NXP_DEMO_SRCREV}"
@@ -20,6 +20,12 @@ DEPENDS += " \
     qtbase \
     qtdeclarative \
     ncurses \
+"
+
+RDEPENDS:${PN}+= " qtbase \
+    qtdeclarative \
+    ncurses \
+    qt5compat \
 "
 
 do_install() {
