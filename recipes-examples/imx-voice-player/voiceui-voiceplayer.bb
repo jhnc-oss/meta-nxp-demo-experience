@@ -7,7 +7,7 @@ NXPAFE_VOICESEEKER_SRC ?= "git://github.com/nxp-imx/imx-voiceui.git;protocol=htt
 SRCBRANCH_voice = "MM_04.09.00_2405_L6.6.y"
 
 NXP_DEMO_ASSET_SRC ?= "git://github.com/NXP/nxp-demo-experience-assets.git;protocol=https"
-SRCBRANCH_model = "lf-6.6.36_2.1.0"
+SRCBRANCH_model = "lf-6.6.52_2.2.0"
 
 NXP_BTPLAYER_SRC ?= "git://github.com/nxp-imx-support/imx-voiceplayer.git;protocol=https"
 NXP_IMX_VOICEPLAYER_SRC ?= "${NXP_BTPLAYER_SRC}"
@@ -24,8 +24,8 @@ SRC_URI = "\
 
 SRCREV_FORMAT = "voice_model_player"
 SRCREV_voice = "cc51bc7475c0134fcb006ba28a16b2dcd418cf3a"
-SRCREV_model = "a552bd1ed30e93011d470636294ff3fa54b9690a"
-SRCREV_player = "ab1304afa7fa4ec4f839bbe0b9c06dadb2a21d25"
+SRCREV_model = "6c7fd68c3ff56b2219b44ad55e4f6067c8ad3463"
+SRCREV_player = "a70dba74eeff1b90f47425bae9779c4daa9c1aa0"
 
 S = "${WORKDIR}/git"
 
@@ -46,8 +46,7 @@ EXTRA_OEMAKE:mx8-nxp-bsp = "BUILD_ARCH=CortexA53"
 EXTRA_OEMAKE:mx93-nxp-bsp = "BUILD_ARCH=CortexA55"
 
 do_patch() {
-    mv ${WORKDIR}/0001-Change-Recipe-Target-Sysroot-path.patch ${WORKDIR}/voiceAction
-    cd ${WORKDIR}/voiceAction && git apply 0001-Change-Recipe-Target-Sysroot-path.patch
+    cd ${WORKDIR} && git apply 0001-Change-Recipe-Target-Sysroot-path.patch
 }
 
 do_compile() {

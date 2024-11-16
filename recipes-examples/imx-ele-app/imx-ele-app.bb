@@ -2,7 +2,7 @@ SUMARY = "EdgeLock Enclave(ELE) security demo"
 DESCRIPTION = "Recipe of ELE demo application"
 SECTION = "Security"
 LICENSE = "Proprietary"
-LIC_FILES_CHKSUM = "file://LICENSE.txt;md5=1053d8bb787ee53eb7a075420a4a616e"
+LIC_FILES_CHKSUM = "file://LICENSE.txt;md5=a9b152a21821b0419330795aee9f6602"
 
 NXP_ELE_DEMO_SRC ?= "gitsm://github.com/nxp-imx-support/imx-ele-demo.git;protocol=https"
 
@@ -12,7 +12,7 @@ DEMODIR = "${GPNT_APPS_FOLDER}/scripts/security/ele"
 SRC_URI = "${NXP_ELE_DEMO_SRC};branch=${SRCBRANCH}\
 			file://0001-fix-wayland-busy-flush-and-add-wm_capabilities.patch"
 
-SRCREV = "f3a7d1085803b659feef5204195c235daf999a51"
+SRCREV = "66bcd9fc6b7e4674fc1ec560c890c57cfaaa5c5a"
 
 S = "${WORKDIR}/git"
 
